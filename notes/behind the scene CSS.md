@@ -1,3 +1,6 @@
+- TOC
+{:toc}
+
 3 pillars to write good html and CSS and build good websites
 - responsive design
 - maintainable and scalable code
@@ -27,6 +30,7 @@ Web performance
 - less images
 - compress images
 
+```
 What happens to CSS when we load up a webpage
             Load HTML --> Parse HTML ---------------------------------> Document Object Model(DOM)------|
                             |                                                                           |
@@ -40,10 +44,10 @@ What happens to CSS when we load up a webpage
                                                                                                         |
 Final rendered<--------- Website rendering:       <----------------------Render Tree <------------------|
 website              the visual formatting model
+```
 
 
-
-The CASCADE in CSS
+## The CASCADE in CSS
 Process of combining different stylesheets and resolving conflicts between different CSS rules and 
 declarations, when more than one rule applies to a certain element
 
@@ -51,16 +55,18 @@ declarations, when more than one rule applies to a certain element
 - User
 - Browser declaration(user agent)
 
-TO RESOLVE CONFLICTS
+## TO RESOLVE CONFLICTS
+```
 importance(weight)                                        >            specificity                                   >              source order
 1. User !important declaration            same                  1. inline styles                          same                     The last declarations in the code
 2. Author !important declaration        importance?             2. IDs                                 specificity?                 will override all other declarations 
 3. Author declaration------------------------------------->     3. classes, pseudo-classes, attribute ---------------->            and will be applied
 4. User declaration                                             4. elements, pseudo-elements
 5. Default browser declarations
+```
 
------------------------------------------------------------------------------------------------------------------------------------------------------------
 Example
+```CSS
 .button {
     font-size: 20px;
     color: white;
@@ -70,8 +76,7 @@ Example
 #nav.pull-right .button{
     background-color: green;
 }
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+```
 
 
                                                             Inline      IDs            Classes                     Elements
@@ -99,7 +104,7 @@ a {                                                             0       0       
 background color will be green on the basis of specificity
 
 
-Summary:
+## Summary:
 - CSS declarations marked with !important have the highest priority
 - But, only use !important as a last resource. It's better to use correct specificities - more maintainable code!
 - Inline styles will always have priority over styles in external stylesheets;
@@ -110,7 +115,7 @@ Summary:
 - But, rely on order when using 3rd-party stylesheets - always put your author stylesheet last.
 
 
-VISUAL FORMATTING Model
+## VISUAL FORMATTING Model
 Algorithm that calculates boxes and determines the layout of these boxes, for each element in the render tree,
 in order to determine the final layout of the page
 - dimensions of boxes: the box model
